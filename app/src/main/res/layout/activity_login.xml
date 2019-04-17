@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/background_mf_large"
+              android:orientation="vertical">
+
+
+    <TextView
+            android:text="@string/mensagem_inicial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/inicial_message"
+            android:textAppearance="@style/TextAppearance.AppCompat"/>
+    <TextView
+            android:text="Usuário"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user" android:textAppearance="@style/TextAppearance.AppCompat"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Digite seu usuário"
+            android:ems="10"
+            android:id="@+id/user_login" android:textAppearance="@style/TextAppearance.AppCompat"/>
+    <TextView
+            android:text="Senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/password" android:textAppearance="@style/TextAppearance.AppCompat"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Digite sua senha"
+            android:ems="10"
+            android:id="@+id/user_password" android:textAppearance="@style/TextAppearance.AppCompat"/>
+    <Button
+            android:text="Entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_button"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            style="@style/Widget.AppCompat.Button"/>
+
+</LinearLayout>
