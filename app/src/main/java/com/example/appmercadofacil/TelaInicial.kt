@@ -4,15 +4,20 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.support.design.widget.NavigationView
+import android.support.v4.view.GravityCompat
+import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.widget.SearchView
+import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
-import android.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
+import kotlinx.android.synthetic.main.toolbar.*
 
-class TelaInicial : AppCompatActivity() {
+class TelaInicial : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,15 +49,25 @@ class TelaInicial : AppCompatActivity() {
         }
 
 
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
-        //Toolbar AC 05
-        //var toolbar = findViewById<Toolbar>(R.id.toolbar)
-        //setSupportActionBar(toolbar)
+        configMenuLateral()
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        (menu?.findItem(R.id.action_buscar)?.actionView as SearchView).setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+        })
         return true
 
 
@@ -85,5 +100,35 @@ class TelaInicial : AppCompatActivity() {
             finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun configMenuLateral(){
+        var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        var menuLateral = findViewById<DrawerLayout>(R.id.layout_menu_lateral)
+
+        var toogle = ActionBarDrawerToggle(this, menuLateral, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+
+        menuLateral.addDrawerListener(toogle)
+        toogle.syncState()
+
+        val navigationView = findViewById<NavigationView>(R.id.menu_lateral)
+        navigationView.setNavigationItemSelectedListener(this)
+    }
+
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_mercados -> {
+                Toast.makeText(this, "Clicou mercados",Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_comparar -> {
+                Toast.makeText(this, "Clicou comparar",Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_localiza -> {
+                Toast.makeText(this, "Clicou localiza",Toast.LENGTH_SHORT).show()
+            }
+        }
+        layout_menu_lateral.closeDrawer(GravityCompat.START)
+        return true
     }
 }

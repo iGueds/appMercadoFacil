@@ -9,4 +9,8 @@
     <string name="mercados_abertos">Mercados abertos</string>
     <string name="melhores_preços">Melhores Preços</string>
     <string name="comparar_preços">Comparar Preços</string>
+    <string name="localiza">Localização</string>
+    <string name="user_name">Ícaro Guedes</string>
+    <string name="navigation_drawer_open">Aberto</string>
+    <string name="navigation_drawer_close">Fechado</string>
 </resources>
