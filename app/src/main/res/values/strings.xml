@@ -5,12 +5,16 @@
     <string name="action_atualizar">Atualizar</string>
     <string name="action_config">Configurações</string>
     <string name="action_add">Adicionar</string>
-    <string name="action_sair">Sair</string>
+    <string name="action_sair">Deslogar</string>
     <string name="mercados_abertos">Mercados abertos</string>
-    <string name="melhores_preços">Melhores Preços</string>
-    <string name="comparar_preços">Comparar Preços</string>
+    <string name="melhores_preços">Melhores preços</string>
+    <string name="comparar_preços">Comparar preços</string>
+    <string name="carrinho_compras">Carrinho de compras</string>
+    <string name="adicionar_produto">Adicionar produtos</string>
+    <string name="promocoes">Promoções</string>
     <string name="localiza">Localização</string>
     <string name="user_name">Ícaro Guedes</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="sair">Sair</string>
 </resources>

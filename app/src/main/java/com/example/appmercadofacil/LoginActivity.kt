@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (campoUsuario == "aluno" && valorSenha == "impacta") {
-                val intent = Intent(this, TelaInicial::class.java)
+                val intent = Intent(this, PrincipalActivity::class.java)
                 val param = Bundle()
                 param.putString("campo_login", "")
                 param.putString("campo_senha","")

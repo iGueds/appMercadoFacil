@@ -1,5 +1,6 @@
 package com.example.appmercadofacil
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -8,8 +9,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.SearchView
-import android.support.v7.widget.Toolbar
+import android.support.v7.widget.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -17,7 +17,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class TelaInicial : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +56,7 @@ class TelaInicial : AppCompatActivity(), NavigationView.OnNavigationItemSelected
 
         configMenuLateral()
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -121,13 +122,19 @@ class TelaInicial : AppCompatActivity(), NavigationView.OnNavigationItemSelected
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_mercados -> {
-                Toast.makeText(this, "Clicou mercados",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Carregando...",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,CarrinhoActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_comparar -> {
-                Toast.makeText(this, "Clicou comparar",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Carregando...",Toast.LENGTH_SHORT).show()
             }
             R.id.nav_localiza -> {
-                Toast.makeText(this, "Clicou localiza",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Localizando...",Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_sair -> {
+                Toast.makeText(this, "Saindo...",Toast.LENGTH_SHORT).show()
+                finishAffinity()
             }
         }
         layout_menu_lateral.closeDrawer(GravityCompat.START)
