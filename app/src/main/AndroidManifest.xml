@@ -15,7 +15,8 @@
         </activity>
         <activity android:name=".AdicionarActivity">
         </activity>
-        <activity android:name=".TelaInicial">
+        <activity android:name=".TelaInicial"
+        android:theme="@style/AppTheme.Toolbar">
         </activity>
         <activity android:name=".LoginActivity">
         </activity>

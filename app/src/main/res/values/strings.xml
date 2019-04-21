@@ -11,6 +11,6 @@
     <string name="comparar_preços">Comparar Preços</string>
     <string name="localiza">Localização</string>
     <string name="user_name">Ícaro Guedes</string>
-    <string name="navigation_drawer_open">Aberto</string>
-    <string name="navigation_drawer_close">Fechado</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
 </resources>

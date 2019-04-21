@@ -22,6 +22,8 @@ class TelaInicial : AppCompatActivity(), NavigationView.OnNavigationItemSelected
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
+        supportActionBar?.hide()
+
 
         mercados_abertos.setOnClickListener{
             Toast.makeText(this, "Carregando...", Toast.LENGTH_SHORT).show()
@@ -57,17 +59,17 @@ class TelaInicial : AppCompatActivity(), NavigationView.OnNavigationItemSelected
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        (menu?.findItem(R.id.action_buscar)?.actionView as SearchView).setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        //(menu?.findItem(R.id.action_buscar)?.actionView as SearchView).setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
-            override fun onQueryTextChange(newText: String): Boolean {
-                return false
-            }
+          //  override fun onQueryTextChange(newText: String): Boolean {
+         //       return false
+           // }
 
-            override fun onQueryTextSubmit(query: String): Boolean {
-                return false
-            }
+          //  override fun onQueryTextSubmit(query: String): Boolean {
+              //  return false
+            //}
 
-        })
+       // })
         return true
 
 
