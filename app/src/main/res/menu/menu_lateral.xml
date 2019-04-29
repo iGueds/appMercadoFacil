@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_mercados"
+                android:icon="@drawable/ic_market_white"
+                android:title="@string/carrinho_compras"
+                android:checked="true"/>
+        <item
+                android:id="@+id/nav_comparar"
+                android:icon="@drawable/ic_compare_white"
+                android:title="@string/comparar_preços"/>
+        <item
+                android:id="@+id/nav_localiza"
+                android:icon="@drawable/ic_local_white"
+                android:title="@string/localiza"/>
+        <item
+                android:id="@+id/nav_sair"
+                android:icon="@drawable/ic_sair_white"
+                android:title="@string/sair"
+        />
+    </group>
+
+</menu>

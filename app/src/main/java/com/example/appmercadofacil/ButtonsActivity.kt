@@ -22,7 +22,7 @@ class ButtonsActivity : AppCompatActivity() {
         }
         if (numero == 3){
             val actionBar = supportActionBar
-            actionBar!!.title = "Comparar preços"
+            actionBar!!.title = "Promoções"
         }
     }
 
