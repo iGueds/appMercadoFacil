@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bg">
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="com.example.appmercadofacil.LoginActivity">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/mercado_facil_icon_hdpi"
+        />
+
+        <TextView
+                android:text="@string/mensagem_inicial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/inicial_message"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat"/>
+        <TextView
+                android:text="Usuário"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/user"
+                android:textAppearance="@style/TextAppearance.AppCompat"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:background="@drawable/login_edittext_bg"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="#CCC"
+                android:hint="Digite seu usuário"
+                android:ems="10"
+                android:id="@+id/user_login"
+                android:textAppearance="@style/TextAppearance.AppCompat"/>
+        <TextView
+                android:text="Senha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/password"
+                android:textAppearance="@style/TextAppearance.AppCompat"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_edittext_bg"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="#CCC"
+                android:inputType="textPassword"
+                android:hint="Digite sua senha"
+                android:ems="10"
+                android:id="@+id/user_password"
+                android:textAppearance="@style/TextAppearance.AppCompat"/>
+        <Button
+                android:text="Entrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_button_bg"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:id="@+id/login_button"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                style="@style/Widget.AppCompat.Button"/>
+    </LinearLayout>
+
+
+</ScrollView>

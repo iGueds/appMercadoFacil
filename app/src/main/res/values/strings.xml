@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mercado Facil</string>
+    <string name="mensagem_inicial">Bem vindo ao Mercado Fácil</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_atualizar">Atualizar</string>
+    <string name="action_config">Configurações</string>
+    <string name="action_add">Adicionar</string>
+    <string name="action_sair">Sair</string>
+    <string name="mercados_abertos">Mercados abertos</string>
+    <string name="melhores_preços">Melhores Preços</string>
+    <string name="comparar_preços">Comparar Preços</string>
+</resources>
