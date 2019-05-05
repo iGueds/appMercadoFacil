@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".AdicionarProdutoActivity">
+
+    <EditText
+            android:id="@+id/nameProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nome"
+            android:inputType="textPersonName"/>
+
+    <EditText
+            android:id="@+id/brandProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Marca do produto"
+            android:inputType="textMultiLine" />
+
+    <EditText
+            android:id="@+id/imageProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Imagem do produto (Colar URL)"
+            android:inputType="textPersonName" />
+
+    <EditText
+            android:id="@+id/priceProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Preço do produto"
+            android:inputType="textPersonName"/>
+
+    <Button
+            android:id="@+id/salvarProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="salvar" />
+
+</LinearLayout>

@@ -25,12 +25,14 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         supportActionBar?.hide()
 
 
-        mercados_abertos.setOnClickListener{
+        adicionar_produtos.setOnClickListener{
             Toast.makeText(this, "Carregando...", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, ButtonsActivity::class.java)
-            val param = Bundle()
-            param.putInt("activity",1)
-            intent.putExtras(param)
+            val intent = Intent(this, AdicionarProdutoActivity::class.java)
+            startActivity(intent)
+        }
+        produtos.setOnClickListener{
+            Toast.makeText(this, "Carregando...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ProdutoActivity::class.java)
             startActivity(intent)
         }
         melhores_precos.setOnClickListener{
@@ -49,6 +51,8 @@ class PrincipalActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             intent.putExtras(param)
             startActivity(intent)
         }
+
+
 
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)

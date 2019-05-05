@@ -9,6 +9,8 @@ import android.support.v4.content.ContextCompat
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
+import com.example.appmercadofacil.LoginService.parserJson
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -21,27 +23,30 @@ class LoginActivity : AppCompatActivity() {
         //background_login.setImageResource(R.drawable.mercado_facil_background)
 
 
-        login_button.setOnClickListener{
+        login_button.setOnClickListener {
             Toast.makeText(this, "Entrando...", Toast.LENGTH_SHORT).show()
-            val campoUsuario = user_login.text.toString()
-            val valorSenha = user_password.text.toString()
+            val Login = Login()
+            Login.email = user_login.text.toString()
+            Login.password = user_password.text.toString()
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 window.setStatusBarColorTo(R.color.colorPrimary)
             }
 
-            if (campoUsuario == "aluno" && valorSenha == "impacta") {
-                val intent = Intent(this, PrincipalActivity::class.java)
-                val param = Bundle()
-                param.putString("campo_login", "")
-                param.putString("campo_senha","")
-                intent.putExtras(param)
-                startActivity(intent)
-            }
-            else{
-                Toast.makeText(this, "Usuário ou senha inválidos", Toast.LENGTH_SHORT).show()
-            }
+
+
+            taskLogin(Login)
+
+
         }
+    }
+    private fun taskLogin(login: Login) {
+        val intent = Intent(this, PrincipalActivity::class.java)
+        Thread {
+            LoginService.postLogin(login)
+            runOnUiThread{startActivity(intent)
+            }
+        }.start()
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)

@@ -16,7 +16,7 @@
                 android:background="@drawable/login_bg">
                 <include layout="@layout/toolbar"/>
                     <Button
-                            android:text="@string/mercados_abertos"
+                            android:text="@string/adicionar_produto"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
@@ -25,7 +25,18 @@
                             android:layout_marginRight="70dp"
                             android:layout_gravity="center"
                             android:background="@drawable/buttons_bg"
-                            android:id="@+id/mercados_abertos"/>
+                            android:id="@+id/adicionar_produtos"/>
+                    <Button
+                            android:text="@string/produtos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginRight="70dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/buttons_bg"
+                            android:id="@+id/produtos"/>
                     <Button
                             android:text="@string/melhores_preços"
                             android:layout_width="match_parent"

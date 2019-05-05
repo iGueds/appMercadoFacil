@@ -1,6 +1,8 @@
 package com.example.appmercadofacil
 
-class Carrinho {
+import com.google.gson.GsonBuilder
+
+class Produto{
 
     var id:Long = 0
     var name = ""
@@ -9,6 +11,9 @@ class Carrinho {
     var price = ""
 
     override fun toString(): String {
-        return "Carrinho(produto='$name')"
+        return "Produto(produto='$name')"
+    }
+    fun toJson(): String {
+        return GsonBuilder().create().toJson(this)
     }
 }

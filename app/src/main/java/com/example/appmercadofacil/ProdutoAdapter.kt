@@ -10,11 +10,11 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 
-class CarrinhoAdapter (
-    val carrinho: List<Carrinho>,
-    val onClick: (Carrinho) -> Unit): RecyclerView.Adapter<CarrinhoAdapter.CarrinhoViewHolder>() {
+class ProdutoAdapter (
+    val produto: List<Produto>,
+    val onClick: (Produto) -> Unit): RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder>() {
 
-    class CarrinhoViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class ProdutoViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val cardNome: TextView
         val cardImg : ImageView
         var cardProgress: ProgressBar
@@ -24,34 +24,34 @@ class CarrinhoAdapter (
             cardNome = view.findViewById<TextView>(R.id.cardNome)
             cardImg = view.findViewById<ImageView>(R.id.cardImg)
             cardProgress = view.findViewById<ProgressBar>(R.id.cardProgress)
-            cardView = view.findViewById<CardView>(R.id.card_carrinho)
+            cardView = view.findViewById<CardView>(R.id.card_produto)
 
         }
 
     }
 
 
-    override fun getItemCount() = this.carrinho.size
+    override fun getItemCount() = this.produto.size
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarrinhoViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_carrinho, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdutoViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_produto, parent, false)
 
-        val holder = CarrinhoViewHolder(view)
+        val holder = ProdutoViewHolder(view)
         return holder
     }
 
 
-    override fun onBindViewHolder(holder: CarrinhoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProdutoViewHolder, position: Int) {
         val context = holder.itemView.context
 
-        val carrinho = carrinho[position]
+        val produto = produto[position]
 
 
-        holder.cardNome.text = carrinho.name
+        holder.cardNome.text = produto.name
         holder.cardProgress.visibility = View.VISIBLE
 
-        Picasso.with(context).load(carrinho.image).fit().into(holder.cardImg,
+        Picasso.with(context).load(produto.image).fit().into(holder.cardImg,
             object: com.squareup.picasso.Callback{
                 override fun onSuccess() {
                     holder.cardProgress.visibility = View.GONE
@@ -63,7 +63,6 @@ class CarrinhoAdapter (
             })
 
 
-        // adiciona evento de clique
-        holder.itemView.setOnClickListener {onClick(carrinho)}
+        holder.itemView.setOnClickListener {onClick(produto)}
     }
 }

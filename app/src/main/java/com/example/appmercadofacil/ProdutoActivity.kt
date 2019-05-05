@@ -10,22 +10,22 @@ import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
 
-class CarrinhoActivity : AppCompatActivity() {
+class ProdutoActivity : AppCompatActivity() {
 
     private val context: Context get() = this
-    private var carrinho = listOf<Carrinho>()
-    var recyclerCarrinho: RecyclerView? = null
+    private var produto = listOf<Produto>()
+    var recyclerProduto: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_carrinho)
-        recyclerCarrinho = findViewById<RecyclerView>(R.id.recyclerCarrinho)
-        recyclerCarrinho?.layoutManager = LinearLayoutManager(context)
-        recyclerCarrinho?.itemAnimator = DefaultItemAnimator()
-        recyclerCarrinho?.setHasFixedSize(true)
+        setContentView(R.layout.activity_produto)
+        recyclerProduto = findViewById<RecyclerView>(R.id.recyclerProduto)
+        recyclerProduto?.layoutManager = LinearLayoutManager(context)
+        recyclerProduto?.itemAnimator = DefaultItemAnimator()
+        recyclerProduto?.setHasFixedSize(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val actionBar = supportActionBar
-        actionBar!!.title = "Carrinho"
+        actionBar!!.title = "Produtos"
     }
     override fun onResume() {
         super.onResume()
@@ -33,15 +33,15 @@ class CarrinhoActivity : AppCompatActivity() {
     }
     fun taskCarrinho() {
         Thread {
-            carrinho = CarrinhoService.getCarrinho(context)
+            produto = ProdutoService.getProduto(context)
             runOnUiThread {
-                recyclerCarrinho?.adapter = CarrinhoAdapter(carrinho) { onClickCarrinho(it) }
+                recyclerProduto?.adapter = ProdutoAdapter(produto) { onClickProduto(it) }
             }
         }.start()
     }
 
-    fun onClickCarrinho(carrinho: Carrinho) {
-        Toast.makeText(context, "Clicou produto ${carrinho.name}", Toast.LENGTH_SHORT).show()
+    fun onClickProduto(produto: Produto) {
+        Toast.makeText(context, "Clicou produto ${produto.name}", Toast.LENGTH_SHORT).show()
     }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item?.itemId
