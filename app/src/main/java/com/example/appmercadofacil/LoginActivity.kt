@@ -20,17 +20,16 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
 
-        //background_login.setImageResource(R.drawable.mercado_facil_background)
 
 
         login_button.setOnClickListener {
             Toast.makeText(this, "Entrando...", Toast.LENGTH_SHORT).show()
             val Login = Login()
-            Login.email = user_login.text.toString()
+            Login.user = user_login.text.toString()
             Login.password = user_password.text.toString()
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.setStatusBarColorTo(R.color.colorPrimary)
+                window.setStatusBarColorTo(R.color.colorPrimaryDark)
             }
 
 
