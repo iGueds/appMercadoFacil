@@ -9,8 +9,6 @@ import android.support.v4.content.ContextCompat
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
-import com.example.appmercadofacil.LoginService.parserJson
-import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -29,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
             Login.password = user_password.text.toString()
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                window.setStatusBarColorTo(R.color.colorPrimaryDark)
+                window.setStatusBarColorTo(R.color.colorPrimary)
             }
 
 
