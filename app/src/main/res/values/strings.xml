@@ -13,6 +13,10 @@
     <string name="carrinho_compras">Carrinho de compras</string>
     <string name="adicionar_produto">Adicionar produtos</string>
     <string name="produtos">Ver Produtos</string>
+    <string name="nome_produto">Nome do produto</string>
+    <string name="marca_produto">Marca do produto</string>
+    <string name="imagem_produto">Imagem do produto (Colar URL)</string>
+    <string name="preco_produto">Preço do produto</string>
     <string name="promocoes">Promoções</string>
     <string name="localiza">Localização</string>
     <string name="user_name">Ícaro Guedes</string>

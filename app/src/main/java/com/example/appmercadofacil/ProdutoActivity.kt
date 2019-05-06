@@ -41,7 +41,7 @@ class ProdutoActivity : AppCompatActivity() {
     }
 
     fun onClickProduto(produto: Produto) {
-        Toast.makeText(context, "Clicou produto ${produto.name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Clicou ${produto.name}", Toast.LENGTH_SHORT).show()
     }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item?.itemId
