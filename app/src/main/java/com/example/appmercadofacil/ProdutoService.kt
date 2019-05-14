@@ -10,14 +10,25 @@ object ProdutoService {
 
     val host = "http://iguedes.pythonanywhere.com"
     val TAG = "WS_MF"
+    val dao = DBManager.getProdutoDAO()
 
     fun getProduto (context: Context): List<Produto> {
-        val url = "$host/product"
-        val json = URL(url).readText()
+        if (AndroidUtils.isInternetAvailable(context)){
+            val url = "$host/product"
+            val json = URL(url).readText()
+            val produtos:List<Produto> =  parserJson(json)
 
-        Log.d(TAG, json)
+            for (d in produtos){
+                if (dao.getById(d.id) == null)
+                    dao.insert(d)
+            }
 
-        return parserJson<List<Produto>>(json)
+            Log.d(TAG, json)
+
+            return produtos
+       } else {
+            return dao.findAll()
+        }
 
     }
 

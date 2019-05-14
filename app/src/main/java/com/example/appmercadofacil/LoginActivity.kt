@@ -18,6 +18,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
 
+        user_login.setText(Prefs.getString("lembrarUsuario"))
+        user_password.setText(Prefs.getString("lembrarSenha"))
+        checkbox.isChecked = Prefs.getBoolean("check")
+
 
 
         login_button.setOnClickListener {
@@ -25,10 +29,24 @@ class LoginActivity : AppCompatActivity() {
             val Login = Login()
             Login.user = user_login.text.toString()
             Login.password = user_password.text.toString()
+            val usuario = user_login.text.toString()
+            val senha = user_password.text.toString()
+
+            if(checkbox.isChecked) {
+                Prefs.setString("lembrarUsuario", usuario)
+                Prefs.setString("lembrarSenha", senha)
+            }
+            else {
+                Prefs.setString("lembrarUsuario", "")
+                Prefs.setString("lembrarSenha", "")
+            }
+            Prefs.setBoolean("check", checkbox.isChecked)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 window.setStatusBarColorTo(R.color.colorPrimary)
             }
+
+
 
 
 
@@ -45,6 +63,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun Window.setStatusBarColorTo(color: Int){

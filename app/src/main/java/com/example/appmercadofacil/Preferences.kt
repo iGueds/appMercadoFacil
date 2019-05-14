@@ -20,4 +20,7 @@ object Prefs {
 
     fun getString(flag: String) = prefs().getString(flag, "")
 
+    fun setInt(flag: String, valor: Int) = prefs().edit().putInt(flag, valor).apply()
+
+    fun getInt(flag: String) = prefs().getInt(flag, 0)
 }

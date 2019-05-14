@@ -17,6 +17,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="140dp"
                 android:src="@drawable/mercado_facil_icon_hdpi"
         />
 
@@ -74,6 +75,18 @@
                 android:ems="10"
                 android:id="@+id/user_password"
                 android:textAppearance="@style/TextAppearance.AppCompat"/>
+        <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_save"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="135dp"
+                android:layout_marginLeft="135dp"
+                android:buttonTint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
+        />
+
         <Button
                 android:text="Entrar"
                 android:layout_width="match_parent"
