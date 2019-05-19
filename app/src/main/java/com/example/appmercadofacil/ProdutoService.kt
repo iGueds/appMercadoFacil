@@ -1,6 +1,8 @@
 package com.example.appmercadofacil
 
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -33,8 +35,19 @@ object ProdutoService {
     }
 
     fun postProduto(produto: Produto): Response {
-        val json = HttpHelper.post("$host/product", produto.toJson())
-        return parserJson(json)
+        val context = MFApplication.getInstance().applicationContext
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
+        val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
+        if (isConnected == true){
+            val json = HttpHelper.post("$host/product", produto.toJson())
+            return parserJson(json)
+        } else{
+            dao.insert(produto)
+            val json = HttpHelper.post("$host/product", produto.toJson())
+            return parserJson(json)
+
+        }
     }
 
     fun deleteProduto(produto: Produto): Response {

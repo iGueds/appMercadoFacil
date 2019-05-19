@@ -10,11 +10,12 @@ object LoginService {
     val TAG = "WS_MF"
 
 
-
     fun postLogin (Login: Login): Response{
         val json = HttpHelper.post("$host/login", Login.toJson())
 
         Log.d(TAG, json)
+
+        Prefs.setString("LG_TOKEN", json)
 
         return parserJson(json)
 

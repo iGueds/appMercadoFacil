@@ -1,6 +1,7 @@
 package com.example.appmercadofacil
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
@@ -27,15 +28,18 @@ class ProdutoActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "Produtos"
     }
+
     override fun onResume() {
         super.onResume()
         taskCarrinho()
     }
+
     fun taskCarrinho() {
         Thread {
             produto = ProdutoService.getProduto(context)
             runOnUiThread {
-                recyclerProduto?.adapter = ProdutoAdapter(produto) { onClickProduto(it) }
+                recyclerProduto?.adapter = ProdutoAdapter(produto) { onClickProduto(it)  }
+                sendNotification(this.produto.get(0))
             }
         }.start()
     }
@@ -43,10 +47,17 @@ class ProdutoActivity : AppCompatActivity() {
     fun onClickProduto(produto: Produto) {
         Toast.makeText(context, "Clicou ${produto.name}", Toast.LENGTH_SHORT).show()
     }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item?.itemId
         if (id == android.R.id.home)
             finish()
         return super.onOptionsItemSelected(item)
+    }
+
+    fun sendNotification(produto: Produto){
+        val intent = Intent(this, ProdutoActivity::class.java)
+        intent.putExtra("produtos", produto.name)
+        NotificationUtil.create(1, intent, "Ver Produtos", "Nova lista de produtos disponíveis")
     }
 }

@@ -29,12 +29,12 @@ class LoginActivity : AppCompatActivity() {
             val Login = Login()
             Login.user = user_login.text.toString()
             Login.password = user_password.text.toString()
-            val usuario = user_login.text.toString()
-            val senha = user_password.text.toString()
+            val user = user_login.text.toString()
+            val password = user_password.text.toString()
 
             if(checkbox.isChecked) {
-                Prefs.setString("lembrarUsuario", usuario)
-                Prefs.setString("lembrarSenha", senha)
+                Prefs.setString("lembrarUsuario", user)
+                Prefs.setString("lembrarSenha", password)
             }
             else {
                 Prefs.setString("lembrarUsuario", "")

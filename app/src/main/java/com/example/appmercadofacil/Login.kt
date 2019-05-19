@@ -8,7 +8,7 @@ class Login{
     var password = ""
 
     override fun toString(): String {
-        return "Login(email='$user')"
+        return "Login(user='$user')"
     }
     fun toJson():String{
         return GsonBuilder().create().toJson(this)
